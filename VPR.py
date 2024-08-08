@@ -81,8 +81,9 @@ for epoch in range(num_epochs):
         running_loss += loss.item()  # 累加损失
 
     print(f"Epoch [{epoch + 1}/{num_epochs}], Loss: {running_loss / len(dataloader):.4f}")  # 打印损失
+    torch.save(resnet34.state_dict(), './models/resnet34_VPR.pth')
 
-print("Finished Training")  # 训练完成
+print("Finished Training, Model saved to './models/resnet34_VPR.pth'")  # 训练完成
 #
 # # 切换模型到评估模式
 # resnet34.eval()
